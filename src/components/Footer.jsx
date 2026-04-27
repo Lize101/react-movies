@@ -1,7 +1,7 @@
 const Footer = () => {
     return(
         <footer>
-            <p>Movies from <a href="">OMDB API</a></p>
+            <p>Movies from <a href="https://www.omdbapi.com/" target="_blank">OMDB API</a></p>
         </footer>
     )
 }

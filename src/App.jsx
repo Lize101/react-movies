@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Search from './components/Search';
 import List from './components/MovieList';
 import Footer from './components/Footer';
+import './App.css'
 
 const App = () => {
 
@@ -12,12 +13,12 @@ const App = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchMovies('Marvel');
+    fetchMovies('Action');
   }, []);
 
   const fetchMovies = async (searchTerm) => {
 
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
+    const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
 
     try {
       setLoading(true);
@@ -34,8 +35,8 @@ const App = () => {
     <>
       <Header/>
       <Search fetchMovies={fetchMovies}/>
-      {loading && <p>Loading...</p>}
-      {resultMovies.length === 0 && !loading ? <p>No results found</p> : <List results={resultMovies}/>}
+      {loading && <p className='loading'>Loading...</p>}
+      {resultMovies.length === 0 && !loading ? <p className='no-results'>No results found</p> : <List results={resultMovies}/>}
       <Footer/>
     </>
   )

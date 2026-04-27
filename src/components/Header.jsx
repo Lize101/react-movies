@@ -1,8 +1,8 @@
 const Header = () => {
     return(
         <header>
-            <h1>Movies</h1>
-            <p>Search for movies</p>
+            <h1>OMDB Movie Search</h1>
+            <p className="head-para">Find your favourite movies</p>
         </header>
     )
 }

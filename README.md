@@ -26,3 +26,5 @@ A movie search site that fetches and displays movies from the OMDB API.
 4. Run `npm run dev`
 
 ## Live Site:
+
+[OMDB Movie Search](https://the-movies-search.vercel.app/)

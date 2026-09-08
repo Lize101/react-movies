@@ -22,8 +22,8 @@ A movie search site that fetches and displays movies from the OMDB API.
 
 To improve this project, I could add:
 - short plot summary to each movie card
-- filter options to filter by, for example release date, of alphabetical order (A-Z)
-- pagination for large number of movie results eg over 10 per search
+- filter options to filter by, for example release date, or alphabetical order (A-Z)
+- pagination for large number of movie results e.g. over 10 per search
 - unit tests using Jest, to test components
 
 ## Run the app locally:

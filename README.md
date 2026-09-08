@@ -18,6 +18,14 @@ A movie search site that fetches and displays movies from the OMDB API.
 - React.js (including useState and useEffect)
 - CSS
 
+## Future improvements:
+
+To improve this project, I could add:
+- short plot summary to each movie card
+- filter options to filter by, for example release date, of alphabetical order (A-Z)
+- pagination for large number of movie results eg over 10 per search
+- unit tests using Jest, to test components
+
 ## Run the app locally:
 
 1. Clone the repo from GitHub

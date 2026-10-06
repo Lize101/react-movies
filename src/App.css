@@ -95,7 +95,7 @@ footer a:hover {
     color: #dbdaed;
 }
 
-.loading, .no-results {
+.loading, .no-results, .error {
     text-align: center;
     font-size: 1.3rem;
     padding: 50px;

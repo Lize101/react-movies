@@ -3,21 +3,22 @@ import Header from './components/Header';
 import Search from './components/Search';
 import List from './components/MovieList';
 import Footer from './components/Footer';
+import type { Movie } from './types';
 import './App.css'
 
 const App = () => {
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const [resultMovies, setResultMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [resultMovies, setResultMovies] = useState<Movie[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetchMovies('Action');
   }, []);
 
-  const fetchMovies = async (searchTerm) => {
+  const fetchMovies = async (searchTerm: string) => {
 
     const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
 

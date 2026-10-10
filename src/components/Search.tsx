@@ -1,8 +1,12 @@
 import { useState } from 'react';
 
-const Search = ({fetchMovies}) => {
+interface FetchFunction {
+    fetchMovies: (searchTerm: string) => void;
+}
 
-    const [value, setValue] = useState('');
+const Search = ({fetchMovies}: FetchFunction) => {
+
+    const [value, setValue] = useState<string>('');
 
     return(
         <form onSubmit={(e) => {e.preventDefault(); fetchMovies(value);}}>

@@ -1,4 +1,11 @@
-const Card = ({movie}) => {
+import type { Movie } from '../types';
+
+interface MovieCard {
+    movie: Movie;
+}
+
+const Card = ({ movie }: MovieCard) => {
+
     return(
         <div className="card">
             <h3>{movie.Title}</h3>

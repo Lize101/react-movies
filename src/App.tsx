@@ -1,39 +1,29 @@
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Search from './components/Search';
-import List from './components/MovieList';
-import Footer from './components/Footer';
+import { Header, Search, List, Footer } from './components';
+import { searchMovies } from './api/movies';
 import type { Movie } from './types';
 import './App.css'
 
 const App = () => {
-
-  const apiKey = import.meta.env.VITE_API_KEY;
 
   const [resultMovies, setResultMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchMovies('Action');
+    fetchMovies('Harry Potter');
   }, []);
 
   const fetchMovies = async (searchTerm: string) => {
 
-    const url = `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`;
-
     try {
+      setLoading(true);
       setError(null);
-      const res = await fetch(url);
-      if(!res.ok) {
-        setError('There is an error retrieving data')
-        return;
-      }
-      const data = await res.json();
-      setResultMovies(data.Search || []);
+      const foundMovies = await searchMovies(searchTerm)
+      setResultMovies(foundMovies);
     } catch (err) {
       console.error(`There is an error ${err}`);
-      setError('An error has occurred');
+      setError('There is a technical problem. We are working on this.');
     } finally {
       setLoading(false);
     }

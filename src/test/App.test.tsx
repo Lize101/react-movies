@@ -43,7 +43,7 @@ describe('App', () => {
         }))
         render(<App/>)
         await waitFor(() => {
-            expect(screen.getByText('There is an error retrieving data')).toBeInTheDocument();
+            expect(screen.getByText('There is a technical problem. We are working on this.')).toBeInTheDocument();
         })
     })
 })

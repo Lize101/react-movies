@@ -5,18 +5,19 @@ interface MovieCard {
 }
 
 const Card = ({ movie }: MovieCard) => {
+    const {Title, Poster, Year } = movie;
 
     return(
         <div className="card">
-            <h3>{movie.Title}</h3>
-            <img src={movie.Poster !== 'N/A' ? movie.Poster : '/placeholder-img.png'}
-            alt={movie.Title}
+            <h3>{Title}</h3>
+            <img src={Poster !== 'N/A' ? Poster : '/placeholder-img.png'}
+            alt={Title}
             onError={(e) => {
                     e.currentTarget.src = '/placeholder-img.png';
                 }}/>
-            <p>{movie.Year}</p>
+            <p>{Year}</p>
         </div>
     )
 }
 
-export default Card
+export default Card;
